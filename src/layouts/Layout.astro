@@ -1,23 +1,30 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+const { title = "Geovani Guzman | Full Stack Developer" } = Astro.props;
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portafolio de Geovani Guzmán, desarrollador web full stack." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+
+  <body class="min-h-screen text-white">
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <img
+        src="/effects/background-blue.webp"
+        alt=""
+        class="h-full w-full object-cover opacity-60"
+      />
+
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <div class="absolute inset-0 bg-linear-to-b from-black/30 via-[#020617]/70 to-[#020617]"></div>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
